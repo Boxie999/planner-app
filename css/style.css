@@ -4,6 +4,11 @@ body {
   line-height: 1;
 }
 
+.timeblock {
+  display: flex;
+  flex-direction: column;
+
+}
 textarea {
   background: transparent;
   border: none;
@@ -59,6 +64,8 @@ textarea {
 
 .saveBtn {
   border-left: 1px solid black;
+  height: 50px;
+  width: 100px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
