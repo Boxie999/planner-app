@@ -1,7 +1,9 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Comfortaa', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-image: url("../assets/photo-1629968417850-3505f5180761.jpg");
+  background-attachment: fixed;
 }
 
 .timeblock {
@@ -19,8 +21,11 @@ textarea {
 }
 
 .jumbotron {
+  font-family: 'Comfortaa' ;
   text-align: center;
-  background-color: transparent;
+  background-image: url('../assets/background-5574027_1920.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
@@ -41,10 +46,11 @@ textarea {
   border-top: 1px solid white;
 }
 
-.hour {
-  background-color: #ffffff;
+.timeblock {
+  background-color: transparent;
   color: #000000;
-  border-top: 1px dashed #000000;
+  
+  
 }
 
 .past {

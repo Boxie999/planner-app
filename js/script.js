@@ -2,54 +2,45 @@
 const now = moment().format('MMMM Do YYYY');
 const timeNow = $('#currentDay');
 timeNow.text(now.toString());
+var saveBtn = $('button');
+
+var userInput = [];
+
+// this function is adding colour codes to the timeblock, based on the current time
+var blocks = $('input');
 
 
-
-var timeblocks = $('.timeblock');
-
-timeblocks.each(function() {
+blocks.each(function() {
   
     var thisHour = moment().format('k');
     console.log(thisHour);
 
-    var hour = $(this).attr('data-hour');
+    var hour = $(this).attr('id');
 
     if (hour < thisHour) {
-        $(this).css('background-color', 'grey');
+        $(this).css('background-color', '#d3d3d3');
     }
     else if (hour === thisHour) {
-        $(this).css('background-color', 'red');
+        $(this).css('background-color', '#ff6961');
     }
     else if (hour > thisHour) {
-        $(this).css('background-color', 'green');
+        $(this).css('background-color', '#77dd77');
     }
+
 }); 
 
 
+saveBtn.click(function (event) {
+    event.preventDefault();
+    var inputText = $('input:text').val();
+    console.log(inputText);
+    userInput.push({input: inputText, time: $(this).attr('id') });
+    console.log(userInput);
+    localStorage.setItem( "value", JSON.stringify(userInput));
+   
+  });
 
 
-// 3. Save input to local storage
-//      create variable (an array) called inputs that will store all of the input data
-//      Add event listener to all save button
-//          Add event.preventDefault inside the click event listener
-//          Push the input value to inputs array with the format of { time: xx, input: xxx }
-//              Get the input value
-//              Get the hour value
-//              Push to the inputs array if the hour entry not exist yet in the array
-//              Replace the existing entry if the hour entry exist in the array
-//          Save inputs variable to local storage
-//              Stringify the inputs array
-//          Show feedback message to the user (optional)
-//          The feedback need to be dissappeared automatically
-//
-//      Example of inputs array format
-//      var inputs = [{
-//        time: 9,
-//        input: 'Meeting',
-//      },{
-//        time: 10,
-//        input: 'Coffee',
-//      },...];
 // 4. Load input from local storage when page load/refresh if there's any data in local storage
 //      var localStorageInput = get data from local storage
 //      check if localStorageInput exist, if it is
