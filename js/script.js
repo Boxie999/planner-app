@@ -5,26 +5,29 @@ timeNow.text(now.toString());
 
 
 
+var timeblocks = $('.timeblock');
+
+timeblocks.each(function() {
+  
+    var thisHour = moment().format('k');
+    console.log(thisHour);
+
+    var hour = $(this).attr('data-hour');
+
+    if (hour < thisHour) {
+        $(this).css('background-color', 'grey');
+    }
+    else if (hour === thisHour) {
+        $(this).css('background-color', 'red');
+    }
+    else if (hour > thisHour) {
+        $(this).css('background-color', 'green');
+    }
+}); 
 
 
 
 
-
-// 2. Colour code each block based on the current time
-//      Create variables to target each time block
-//      In the html add the data-hour which represent which hour each element is
-//      Create variable for moment().format(H) (0 - 23) e.g. thisHour
-//      timeblocks = $('.timeblock')
-//      timeblocks.each(function(this) {
-//          var hour = this.attr('data-hour');
-//          if (hour < thisHour) {
-//              this.css('background-color', pastColour)
-//          } else if (hour == thisHour) {
-//              this.css('background-color', presentColour)
-//          } else {
-//              this.css('background-color', futureColour)
-//          }
-//      })
 // 3. Save input to local storage
 //      create variable (an array) called inputs that will store all of the input data
 //      Add event listener to all save button
