@@ -17,5 +17,5 @@ URL to the deployed application:
 
 
 Screenshot of the application:
-
+<img width="401" alt="Screenshot 2023-01-25 at 12 40 32" src="https://user-images.githubusercontent.com/118014637/214565955-f4731de4-2df4-4304-8209-a5901a99e324.png">
 
